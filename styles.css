@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+html { font-size: 1.5em; line-height: 1.5; }
+
+html, button, input, select, textarea { font-family: "Lato", sans-serif; color: black; }
+#container    {
+        display: table;
+		margin:auto;
+		background-color: #E7E5B0;
+		text-align:center;
+}
+#container2    {
+        display: table;
+		margin:auto;
+		background-color: #EB7;
+		text-align:left;
+}
+#title{
+	display: table-row;
+    font-weight: bold;
+}
+  input{        
+		margin: 0 30px 0 40px;
+ }
+#header  {
+        display: table-row;
+        font-weight: bold;
+ }
+#row
+    {
+        display: table-row;
+    }
+#cell
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+#btn{
+padding:5px;
+margin: 20px auto;
+width: 100px;
+}	
+
+input { 
+    margin-top: 30px; 
+    text-align: center; 
+    color: #222; 
+    border: none; 
+    line-height: 1; 
+    font-size: 1.5em; 
+    border-radius: 0.25em;
+    }
+
+	
+.tooltip{
+   			display: inline;
+    		position: relative;
+		}
+		
+.tooltip:hover:after{
+    		background: #333;
+    		background: rgba(0,0,0,.8);
+    		border-radius: 5px;
+    		bottom: 26px;
+    		color: #fff;
+    		content: attr(title);
+			text-align:left;
+    		left: 20%;
+    		padding: 5px 15px;
+    		position: absolute;
+    		z-index: 98;
+    		width: 165px;
+		
+		}
+		
+.tooltip:hover:before{
+    		border: solid;
+    		border-color: #333 transparent;
+    		border-width: 6px 6px 0 6px;
+    		bottom: 20px;
+    		content: "";
+    		left: 50%;
+    		position: absolute;
+    		z-index: 99;
+		}	

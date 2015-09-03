@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="styles.css">
+<script src = "angular.js" type="text/javascript"></script>
+<script src = "scripts.js" type="text/javascript"></script>
+</head>
+<body ng-app = "myapp">
+	<div ng-controller="jsonp_example">
+		<div id="container">
+			<button id= "btn" ng-click="doRequest()">Get All Data</button>
+			<div id="header">
+				<div id="cell">
+					<p>City</p>
+				</div>
+				<div id="cell">
+					<p>Description</p>
+				</div>
+			</div>	
+			<div id="row" ng-repeat = "item in openD">
+				<div id="cell">
+				<a href="#" title=" temp : {{item.main.temp }} &nbsp;&#176;F
+				pressure : {{item.main.pressure}} mph
+				humidity:{{item.main.humidity}} %" 
+				class="tooltip"><span title="More">{{item.name}}</span></a>
+					
+				</div>
+				<div id="cell">
+					{{item.weather[0].description}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div ng-controller = "wthrLookup">
+		<div id="container2">
+			<div id = "title">				
+					<input type = "text" placholder = "Enter City Name" ng-model="city">
+					<button id= "btn" ng-click="lookup()">Get city Data</button>
+					<p>{{err}}</p>
+			</div>
+			<div id="header">
+				<div id="cell">
+					<p>City</p>
+				</div>
+				<div id="cell">
+					<p>Country</p>
+				</div>
+				<div id="cell">
+					<p>Description</p>
+				</div>
+				<div id="cell">
+					<p>Temperature</p>
+				</div>
+				<div id="cell">
+					<p> Humidity</p>
+				</div>
+				<div id="cell">
+					<p>Pressure</p>
+				</div>
+			</div>	
+			<div id="row">				
+				<div id="cell">
+					{{cityD.name}}
+				</div>						
+				<div id="cell">
+					{{cityD.sys.country}}
+				</div>				
+				<div id="cell">
+					{{cityD.weather[0].description}}
+				</div>
+				<div id="cell">
+					{{cityD.main.temp}} &#176;F
+				</div>
+				<div id="cell">
+					 {{cityD.main.humidity}} %
+				</div>
+				<div id="cell">
+					{{cityD.main.pressure}} mph
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>	
